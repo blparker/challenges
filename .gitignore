@@ -1,0 +1,13 @@
+log/*
+deploy
+*.sh
+.monitor
+*.log
+site/logs/*
+.DS_Store
+Thumbs.db
+*.swp
+data/
+*.0
+*.1
+*.pem
