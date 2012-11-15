@@ -52,8 +52,11 @@ def main(url):
         sys.exit()
 
     key_pairs = dict([ p.split('=') for p in (url.split('?')[1]).split('&') ])
+    out = ''
     for key, value in key_pairs.iteritems():
-        print key + ': "' + value + '"'
+        out += key + ': "' + value + '"' + '\n'
+
+    return out
 
 
 def is_valid(url):
@@ -63,5 +66,6 @@ def is_valid(url):
     return reduce(lambda x, y: x and y, [ url[i] in chars for i in range(len(url)) ])
 
 
-main(sys.argv[1])
+if __name__ == '__main__':
+	print main(sys.argv[1])
 
