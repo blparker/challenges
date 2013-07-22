@@ -65,11 +65,36 @@ def run(guests):
     if len(level) > 0:
       levels[len(levels):] = [level]
 
-  print levels
+  return partition(levels)
+  
+
+def partition(levels):
+  tables = [[], []]
+
+  for l in levels:
+    for node in l:
+      tables[node[1]].append(node[0])
+
+  return tables
+
+
+def read(input):
+  guests = []
+
+  with open(input) as f:
+    guests = [ map(int, l.rstrip("\n").split(",")) for l in f.readlines() ]
+
+  return guests
+
+def output(tables):
+  print "\n".join([ str(g) for g in tables[0] ])
+  print "\n"
+  print "\n".join([ str(g) for g in tables[1] ])
 
 def main():
-  guests = [[2, 4], [1, 3], [2], [1]]
-  run(guests)
+  guests = read(sys.argv[1])
+  #guests = [[2, 4], [1, 3], [2], [1]]
+  output(run(guests))
 
 main()
 
