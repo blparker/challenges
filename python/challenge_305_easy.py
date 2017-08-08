@@ -61,14 +61,30 @@ def bv(i):
 #bv(54)
 #print p
 
+"""
 n = 0
 m = 1
 while n & m:
   n = n ^ m
   m <<= 1
 n = n ^ m
-
 print n
+"""
   #n = n << 1
   #print bin(n)
+
+
+n = int(math.floor(math.log(9, 2)))
+l = [0] * n
+
+idx = 0
+while sum(l) < n:
+  print l
+  if l[-1] == 1:
+    for i in range(1, len(l)):
+      l[i - 1] = l[i]
+  else:
+    l[-1] = 1
+
+print l
 
