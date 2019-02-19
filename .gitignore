@@ -11,4 +11,5 @@ data/
 *.0
 *.1
 *.pem
-*.pyc
+*.pycenv/
+env/

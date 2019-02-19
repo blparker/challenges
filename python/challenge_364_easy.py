@@ -88,9 +88,17 @@ def roll(c):
     return '{}: {}'.format(reduce(add, rolls), ' '.join(map(str, rolls)))
 
 
+#print(roll('3d6'))
+#print(roll('4d12'))
+#print(roll('1d10'))
+#print(roll('5d4'))
+
+print(roll('5d12'))
+print(roll('6d4'))
+print(roll('1d2'))
+print(roll('1d8'))
 print(roll('3d6'))
-print(roll('4d12'))
-print(roll('1d10'))
-print(roll('5d4'))
+print(roll('4d20'))
+print(roll('100d100'))
 
 
